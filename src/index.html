@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Rain</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to my first project deployed in Docker</h1>
+    <p>Enjoy it!</p>
+        <!-- Настройки генератора паролей -->
+        <div class="settings">
+            <label>
+                <input type="checkbox" id="includeNumbers" checked>
+                Include Numbers
+            </label>
+            <label>
+                <input type="checkbox" id="includeUppercase" checked>
+                Include Uppercase Letters
+            </label>
+            <label>
+                <input type="checkbox" id="includeLowercase" checked>
+                Include Lowercase Letters
+            </label>
+            <label>
+                <input type="checkbox" id="includeSpecial" >
+                Include Special Characters (% * ) ? @ # $ ~
+            </label>
+
+            <br>
+
+            <label>
+                Password Length: <input type="number" id="passwordLength" value="12" min="6" max="30">
+            </label>
+
+            <br>
+        </div>
+
+        <!-- Поле для пароля и кнопки -->
+        <div class="generator">
+            <input type="text" id="password" readonly>
+            <button onclick="generatePassword()">Generate Password</button>
+            <button onclick="copyPassword()">Copy Password</button>
+        </div>
+
+        <canvas id="c"></canvas>
+        <script src="js/script.js"></script>
+        <script src="js/passwd.js"></script>
+    <canvas id="c"></canvas>
+    <script src="js/script.js"></script>
+</body>
+</html>
