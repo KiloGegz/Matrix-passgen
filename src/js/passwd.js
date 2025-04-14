@@ -38,7 +38,7 @@ function copyPassword() {
     if (passwordField.value) {
         passwordField.select();
         document.execCommand("copy");
-        alert("Password copied to clipboard! 🔑");
+        //alert("Password copied to clipboard! 🔑");
     } else {
         alert("Generate a password first! ⚡");
     }

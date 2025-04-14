@@ -1,15 +1,7 @@
 version: '3.8'
-
 services:
   web:
     build: .
     ports:
-      - "8080:80"
-    volumes:
-      - ./src:/usr/share/nginx/html
-    networks:
-      - webnet
-
-networks:
-  webnet:
-    driver: bridge
+      - "80:80"  # Пробрасываем порт 80 контейнера на порт 80 сервера
+    restart: always  # Автоматический перезапуск при падении

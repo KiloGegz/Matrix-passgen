@@ -1,9 +1,16 @@
-# Используем официальный образ Nginx на основе Alpine Linux (легковесный образ)
+# Используем легкий образ Nginx
 FROM nginx:alpine
 
-# Копируем файлы проекта в контейнер
-# Здесь предполагается, что ваш проект находится в папке `src` в корне
-COPY ./src /usr/share/nginx/html
+# Удаляем дефолтную конфигурацию Nginx
+RUN rm -rf /etc/nginx/conf.d/default.conf
 
-# Открываем порт 80 для доступа к веб-приложению
+# Копируем наши файлы в папку Nginx
+COPY public /usr/share/nginx/html
+COPY src/css /usr/share/nginx/html/css
+COPY src/js /usr/share/nginx/html/js
+
+# Открываем порт 80
 EXPOSE 80
+
+# Запускаем Nginx
+CMD ["nginx", "-g", "daemon off;"]
